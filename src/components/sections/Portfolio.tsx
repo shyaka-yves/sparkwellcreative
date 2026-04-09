@@ -30,13 +30,13 @@ export function Portfolio() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: index * 0.1 }}
             viewport={{ once: true }}
-            className="group flex flex-col items-center justify-center p-8 rounded-3xl bg-slate-50 border border-slate-100/50 hover:bg-white hover:shadow-xl transition-all duration-500"
+            className="group flex flex-col items-center justify-center p-6 rounded-3xl bg-slate-50 border border-slate-100/50 hover:bg-white hover:shadow-xl transition-all duration-500"
           >
             <div className="relative w-full aspect-square flex items-center justify-center">
               <img 
                 src={`/partners/${partner.slug}.png`}
                 alt={partner.name}
-                className="max-h-16 w-auto object-contain grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500"
+                className="max-h-16 w-auto object-contain transition-all duration-500 group-hover:scale-110"
                 onError={(e) => {
                   e.currentTarget.style.display = 'none';
                   e.currentTarget.nextElementSibling?.classList.remove('hidden');
@@ -48,7 +48,7 @@ export function Portfolio() {
                 </span>
               </div>
             </div>
-            <p className="mt-6 text-[11px] font-bold uppercase tracking-widest text-primary/40 group-hover:text-secondary transition-colors">
+            <p className="mt-6 text-[10px] md:text-[11px] font-bold uppercase tracking-widest text-primary/40 group-hover:text-secondary transition-colors text-center">
               {partner.name}
             </p>
           </motion.div>

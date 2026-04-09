@@ -11,24 +11,21 @@ export function Footer() {
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16">
         {/* Brand */}
         <div className="space-y-8">
-          <Link href="/" className="group block">
+          <Link href="/" className="group inline-block transition-transform hover:scale-105">
             <img 
               src="/logo.png" 
               alt="Sparkwell Creative" 
-              className="h-12 w-auto object-contain mb-2"
+              className="h-14 w-auto object-contain"
               onError={(e) => {
                 e.currentTarget.style.display = 'none';
                 e.currentTarget.nextElementSibling?.classList.remove('hidden');
               }}
             />
             <div className="hidden">
-              <span className="text-2xl font-black tracking-tighter block">
+              <span className="text-2xl font-black tracking-tighter block text-primary">
                 SPARKWELL <span className="text-secondary">CREATIVE</span>
               </span>
             </div>
-            <span className="text-[9px] font-bold uppercase tracking-[0.4em] text-secondary group-hover:text-primary transition-colors">
-              Your Partner In Growth
-            </span>
           </Link>
           <p className="text-muted-foreground leading-relaxed text-[13px] max-w-sm">
             We're your dedicated partners in propelling business toward success. With a blend 

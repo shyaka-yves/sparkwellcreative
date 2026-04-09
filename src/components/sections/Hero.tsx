@@ -17,12 +17,12 @@ export function Hero() {
         <div className="absolute inset-0 bg-gradient-to-b from-primary/90 via-primary/70 to-primary/40 -z-5" />
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 w-full relative z-10 pt-20">
-        <div className="max-w-4xl mx-auto text-center mb-24">
+      <div className="max-w-7xl mx-auto px-6 w-full relative z-10 pt-20 md:pt-32">
+        <div className="max-w-4xl mx-auto text-center mb-16 md:mb-24">
           <motion.span 
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-secondary font-bold uppercase tracking-[0.4em] text-[10px] md:text-xs mb-8 block"
+            className="text-secondary font-bold uppercase tracking-[0.4em] text-[10px] md:text-xs mb-6 md:mb-8 block"
           >
             Creative Digital Agency
           </motion.span>
@@ -31,9 +31,9 @@ export function Hero() {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8 }}
-            className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tighter text-white leading-[1] mb-10"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tighter text-white leading-[1.1] md:leading-[1] mb-8 md:mb-10"
           >
-            We Drive Growth <br /> 
+            We Drive Growth <br className="hidden sm:block" /> 
             Through <span className="text-secondary italic">Design.</span>
           </motion.h1>
           
@@ -41,7 +41,7 @@ export function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3 }}
-            className="text-base md:text-lg text-white/80 mb-12 max-w-2xl mx-auto leading-relaxed"
+            className="text-sm md:text-base lg:text-lg text-white/80 mb-10 md:mb-12 max-w-2xl mx-auto leading-relaxed"
           >
             We're your dedicated partners in propelling business toward success. 
             With a blend of expertise and innovation, we offer comprehensive solutions 
@@ -52,9 +52,9 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5 }}
-            className="flex flex-center justify-center gap-6"
+            className="flex flex-center justify-center gap-4 md:gap-6"
           >
-            <Button size="lg" className="bg-secondary hover:bg-secondary/90 text-white rounded-full px-12 h-14 text-base font-bold group">
+            <Button size="lg" className="bg-secondary hover:bg-secondary/90 text-white rounded-full px-8 md:px-12 h-14 md:h-16 text-sm md:text-base font-bold group">
               Tell Me More
               <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Button>
@@ -62,7 +62,7 @@ export function Hero() {
         </div>
 
         {/* Floating Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 translate-y-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 translate-y-6 md:translate-y-12 mb-12">
           {[
             {
               title: "Strategic Growth",
@@ -86,13 +86,13 @@ export function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.8 + index * 0.15 }}
               whileHover={{ y: -10 }}
-              className="bg-white/95 backdrop-blur-md p-10 rounded-3xl shadow-2xl border border-white/20 group cursor-pointer"
+              className="bg-white/95 backdrop-blur-md p-8 md:p-10 rounded-3xl shadow-2xl border border-white/20 group cursor-pointer"
             >
-              <div className="w-12 h-12 bg-secondary/10 rounded-2xl flex items-center justify-center text-secondary mb-6 group-hover:bg-secondary group-hover:text-white transition-all">
+              <div className="w-10 h-10 md:w-12 md:h-12 bg-secondary/10 rounded-xl md:rounded-2xl flex items-center justify-center text-secondary mb-4 md:mb-6 group-hover:bg-secondary group-hover:text-white transition-all">
                 {card.icon}
               </div>
-              <h3 className="text-lg font-bold text-primary mb-4">{card.title}</h3>
-              <p className="text-muted-foreground text-[13px] leading-relaxed mb-6">
+              <h3 className="text-base md:text-lg font-bold text-primary mb-3 md:mb-4">{card.title}</h3>
+              <p className="text-muted-foreground text-[12px] md:text-[13px] leading-relaxed mb-6">
                 {card.description}
               </p>
               <div className="text-[10px] font-bold uppercase tracking-widest text-secondary group-hover:underline">Learn More</div>

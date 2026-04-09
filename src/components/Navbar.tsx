@@ -36,33 +36,22 @@ export function Navbar() {
       )}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
-        <Link href="/" className="flex flex-col items-start leading-none group">
-          <div className="flex items-center gap-1">
-            <img 
-              src="/logo.png" 
-              alt="Sparkwell Creative" 
-              className="h-10 w-auto object-contain"
-              onError={(e) => {
-                // Fallback to text if image fails to load
-                e.currentTarget.style.display = 'none';
-                e.currentTarget.nextElementSibling?.classList.remove('hidden');
-              }}
-            />
-            <div className="hidden flex items-center gap-1">
-              <span className="text-xl md:text-2xl font-black tracking-widest text-[#024975]">
-                SPARKWELL
-              </span>
-              <div className="w-6 h-6 rounded-sm bg-gradient-to-tr from-[#024975] to-[#0b97dc] flex items-center justify-center p-1">
-                <div className="w-full h-full border-t-2 border-r-2 border-white rounded-tr-sm" />
-              </div>
-              <span className="text-xl md:text-2xl font-black tracking-widest text-[#024975]">
-                REATIVE
-              </span>
-            </div>
+        <Link href="/" className="flex items-center gap-2 group transition-transform hover:scale-105">
+          <img 
+            src="/logo.png" 
+            alt="Sparkwell Creative" 
+            className="h-10 md:h-12 w-auto object-contain"
+            onError={(e) => {
+              // Only shown if logo.png is missing
+              e.currentTarget.style.display = 'none';
+              e.currentTarget.nextElementSibling?.classList.remove('hidden');
+            }}
+          />
+          <div className="hidden">
+            <span className="text-xl font-black tracking-tighter text-primary">
+              SPARKWELL <span className="text-secondary">CREATIVE</span>
+            </span>
           </div>
-          <span className="text-[7px] md:text-[9px] font-bold tracking-[0.3em] text-[#0b97dc] uppercase mt-1">
-            Your Partner in Growth
-          </span>
         </Link>
 
         {/* Desktop Nav */}
