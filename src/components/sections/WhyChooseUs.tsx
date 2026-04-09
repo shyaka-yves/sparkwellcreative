@@ -7,19 +7,19 @@ import { Check } from "lucide-react"
 const advantages = [
   {
     title: "Expert Team",
-    description: "Our multidisciplinary experts bring decades of experience in design, tech, and marketing."
+    description: "Our skilled team brings specialized knowledge and experience to provide top-notch solutions tailored to our clients' needs."
   },
   {
-    title: "Cutting-edge Tech",
-    description: "We leverage the latest tools and frameworks to build scalable, high-performance solutions."
+    title: "Cutting-Edge Technology",
+    description: "We use the latest tools and technology to stay ahead, ensuring efficient and effective services for every project."
   },
   {
-    title: "Result Oriented",
-    description: "Every decision we make is backed by data and focused on your specific business goals."
+    title: "Customer Focus",
+    description: "We prioritize building strong relationships and understanding our clients' needs, leading to long-term partnerships."
   },
   {
-    title: "Client-First Support",
-    description: "We work as an extension of your team, providing proactive support and clear communication."
+    title: "Proven Success",
+    description: "With a track record of successful projects, we've earned a reputation for reliability and excellence in the market."
   }
 ]
 

@@ -7,41 +7,41 @@ import { Check } from "lucide-react"
 
 const plans = [
   {
-    name: "Basic",
+    name: "Basic Plan",
     price: "500k",
-    description: "Essential social media and branding for startups.",
+    description: "Essential tools for startups and small ventures.",
     features: [
-      "Social Media Management",
-      "Basic Brand Identity",
-      "Content Strategy",
-      "Monthly Reports",
-      "Email Support"
+      "Limited features",
+      "Basic support",
+      "No customization",
+      "Limited usage",
+      "Limited storage"
     ],
     is_popular: false
   },
   {
-    name: "Standard",
+    name: "Standard Plan",
     price: "650k",
-    description: "Comprehensive growth strategy for scaling brands.",
+    description: "Enhanced capabilities for growing businesses.",
     features: [
-      "All Basic Features",
-      "Full Visual Identity",
-      "PPC Advertising",
-      "SEO Optimization",
-      "Priority Support"
+      "More features",
+      "Standard support",
+      "Some customization",
+      "Increased usage",
+      "More storage"
     ],
     is_popular: true
   },
   {
-    name: "Premium",
+    name: "Premium Plan",
     price: "800k",
-    description: "Full-service digital transformation for market leaders.",
+    description: "Full-service solution for market leaders.",
     features: [
-      "All Standard Features",
-      "Web Development",
-      "E-commerce Solution",
-      "Influencer Marketing",
-      "24/7 Dedicated Manager"
+      "Full features",
+      "Priority support",
+      "Full customization",
+      "Unlimited usage",
+      "Premium support & consulting"
     ],
     is_popular: false
   }

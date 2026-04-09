@@ -50,10 +50,10 @@ function Counter({ value, suffix = "", duration = 2 }: { value: number, suffix?:
 }
 
 const stats = [
-  { label: "Revenue Growth", value: 20, suffix: "%" },
+  { label: "Annual Revenue Growth", value: 20, suffix: "%" },
   { label: "Customer Satisfaction", value: 90, suffix: "%" },
   { label: "Market Share", value: 15, suffix: "%" },
-  { label: "Successful Projects", value: 150, suffix: "+" }
+  { label: "Industry Expertise", value: 10, suffix: "+" }
 ]
 
 export function Traction() {

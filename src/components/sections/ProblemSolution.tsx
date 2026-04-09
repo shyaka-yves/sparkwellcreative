@@ -7,18 +7,18 @@ import { AlertCircle, CheckCircle2, TrendingUp } from "lucide-react"
 const challenges = [
   {
     icon: <AlertCircle className="w-8 h-8 text-red-500" />,
-    title: "Market Noise",
-    description: "In an overcrowded digital landscape, standing out is harder than ever before."
+    title: "Brand Differentiation",
+    description: "Businesses often find it hard to make their brand unique. Without a clear way to stand out, they catch less attention and lose out to bigger competitors."
   },
   {
     icon: <CheckCircle2 className="w-8 h-8 text-secondary" />,
-    title: "The Solution",
-    description: "We craft unique brand identities that cut through the noise and resonate instantly."
+    title: "Brand Messaging",
+    description: "Inconsistency across marketing channels confuses customers and dilutes brand perception. We help maintain a cohesive, resonant message."
   },
   {
     icon: <TrendingUp className="w-8 h-8 text-primary" />,
-    title: "Continuous Growth",
-    description: "Our strategies are built for longevity, ensuring your brand evolves with the market."
+    title: "Keeping Up with Trends",
+    description: "The market changes fast. Without a dedicated team, it's tough to stay on top of the latest trends and adapt marketing strategies accordingly."
   }
 ]
 
@@ -62,10 +62,10 @@ export function ProblemSolution() {
         <div className="absolute top-0 right-0 w-64 h-64 bg-secondary/20 rounded-full blur-3xl -z-10 translate-x-1/2 -translate-y-1/2" />
         <div className="lg:flex items-center justify-between gap-12">
           <div className="max-w-xl">
-            <h3 className="text-3xl md:text-4xl font-bold mb-6 italic">We don't just solve problems, <span className="text-secondary">we architect success.</span></h3>
+            <h3 className="text-3xl md:text-4xl font-bold mb-6 italic">Our <span className="text-secondary">Innovative Solutions</span> for your business.</h3>
             <p className="text-white/70 mb-8 lg:mb-0 text-lg">
-              Our approach is holistic, combining deep technical expertise with creative intuition to deliver 
-              unparalleled results.
+              Through USP identification, cohesive brand guidelines, and an agile marketing 
+              approach, we ensure your venture stays ahead of the curve.
             </p>
           </div>
           <div className="flex flex-col items-center gap-4">

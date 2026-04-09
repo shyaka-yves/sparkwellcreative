@@ -6,40 +6,28 @@ import { ExternalLink } from "lucide-react"
 
 const projects = [
   {
-    title: "Eco-Luxe Resorts",
-    category: "Branding & Web Design",
-    image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=2070&auto=format&fit=crop",
-    client: "EcoResorts Intl"
-  },
-  {
-    title: "Urban Gastronomy",
-    category: "Social Media & Content",
+    title: "La Creola Restaurant & Lounge",
+    category: "Social Media Campaigns",
     image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=2070&auto=format&fit=crop",
-    client: "Urban Bistro Group"
+    client: "Brunches, Dinners & Special Events"
   },
   {
-    title: "Velvet Lounge",
-    category: "Brand Activation",
+    title: "Bel Ombre Hotel",
+    category: "Marketing & Content",
+    image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=2070&auto=format&fit=crop",
+    client: "Rooms, Spa & Hospitality Services"
+  },
+  {
+    title: "Indochine Restaurants",
+    category: "Content Strategy",
+    image: "https://images.unsplash.com/photo-1552566626-52f8b828add9?q=80&w=2070&auto=format&fit=crop",
+    client: "Dining Experiences & Event Promotion"
+  },
+  {
+    title: "Azuurii Restaurant & Club",
+    category: "Event Promotion",
     image: "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?q=80&w=2070&auto=format&fit=crop",
-    client: "Sovereign Clubs"
-  },
-  {
-    title: "Lumiere Fashion",
-    category: "E-commerce Strategy",
-    image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=2070&auto=format&fit=crop",
-    client: "Lumiere Paris"
-  },
-  {
-    title: "Zenith Tech",
-    category: "B2B Lead Gen",
-    image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=2070&auto=format&fit=crop",
-    client: "Zenith Solutions"
-  },
-  {
-    title: "Origins Coffee",
-    category: "Package Design",
-    image: "https://images.unsplash.com/photo-1442512595331-e89e73853f31?q=80&w=2070&auto=format&fit=crop",
-    client: "Origins Collective"
+    client: "Weekly Events & Themed Nights"
   }
 ]
 

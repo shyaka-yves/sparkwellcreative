@@ -62,8 +62,7 @@ export function Contact() {
               </div>
               <div>
                 <h5 className="font-bold text-primary mb-1 italic">Email us</h5>
-                <p className="text-muted-foreground">hello@sparkwell.agency</p>
-                <p className="text-muted-foreground">partnerships@sparkwell.agency</p>
+                <p className="text-muted-foreground">Sparkwell@outlook.com</p>
               </div>
             </div>
             
@@ -73,8 +72,8 @@ export function Contact() {
               </div>
               <div>
                 <h5 className="font-bold text-primary mb-1 italic">Call us</h5>
-                <p className="text-muted-foreground">+1 (555) 000-1234</p>
-                <p className="text-muted-foreground">Mon-Fri, 9am - 6pm PST</p>
+                <p className="text-muted-foreground">+250 783663138</p>
+                <p className="text-muted-foreground">Mon-Fri, 9am - 6pm CAT</p>
               </div>
             </div>
             
@@ -84,8 +83,7 @@ export function Contact() {
               </div>
               <div>
                 <h5 className="font-bold text-primary mb-1 italic">Our HQ</h5>
-                <p className="text-muted-foreground">123 Creative Way, Suite 400</p>
-                <p className="text-muted-foreground">San Francisco, CA 94103</p>
+                <p className="text-muted-foreground">Kigali, Rwanda</p>
               </div>
             </div>
           </div>

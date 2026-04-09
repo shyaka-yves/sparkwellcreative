@@ -4,6 +4,7 @@ import { ProblemSolution } from "@/components/sections/ProblemSolution";
 import { Services } from "@/components/sections/Services";
 import { WhyChooseUs } from "@/components/sections/WhyChooseUs";
 import { Traction } from "@/components/sections/Traction";
+import { MarketImpact } from "@/components/sections/MarketImpact";
 import { Pricing } from "@/components/sections/Pricing";
 import { Portfolio } from "@/components/sections/Portfolio";
 import { Team } from "@/components/sections/Team";
@@ -18,6 +19,7 @@ export default function Home() {
       <Services />
       <WhyChooseUs />
       <Traction />
+      <MarketImpact />
       <Portfolio />
       <Team />
       <Pricing />

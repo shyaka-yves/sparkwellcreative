@@ -39,13 +39,14 @@ export function About() {
           
           <div className="space-y-6 text-muted-foreground leading-relaxed">
             <p>
-              At Sparkwell, we believe that great design is not just about aesthetics—it's about results. 
-              Our multidisciplinary team combines strategy, creativity, and technology to help 
-              forward-thinking companies achieve their full potential.
+              At Sparkwell, we believe that we're not just service providers but invested advocates 
+              for your growth. Our collaborative approach ensures that we deeply understand your 
+              business goals and achieve them together.
             </p>
             <p>
-              We don't just follow trends; we set them. By deeply understanding your business goals and 
-              audience needs, we craft bespoke solutions that drive growth and build lasting connections.
+              From strategic guidance to brand development and digital marketing, we're committed 
+              to empowering businesses to thrive in competitive markets. We don't just follow 
+              trends; we set them.
             </p>
           </div>
           

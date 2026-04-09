@@ -27,14 +27,14 @@ export function Hero() {
           </motion.span>
           
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter text-primary leading-[0.9] mb-8">
-            Defining the <br /> 
-            <span className="text-secondary italic">Future</span> of <br />
-            Your Brand.
+            Propelling <br /> 
+            <span className="text-secondary italic">Business</span> toward <br />
+            Success.
           </h1>
           
           <p className="text-lg md:text-xl text-muted-foreground mb-10 max-w-lg leading-relaxed">
-            We blend artistic vision with data-driven strategy to create 
-            digital experiences that resonate, convert, and endure.
+            We're your dedicated partners in growth. With a blend of expertise and innovation, we offer 
+            comprehensive solutions tailored to meet the specific needs of each venture.
           </p>
           
           <div className="flex flex-wrap gap-4">

@@ -14,33 +14,23 @@ import {
 const services = [
   {
     icon: <Palette className="w-10 h-10" />,
-    title: "Branding & Identity",
-    description: "We create distinctive brand identities that capture your essence and resonate with your audience."
+    title: "Brand Building",
+    description: "We create a strong brand identity, including logos and design elements, to help startups stand out and gain trust."
   },
   {
     icon: <Megaphone className="w-10 h-10" />,
     title: "Digital Marketing",
-    description: "Data-driven campaigns that amplify your reach and drive meaningful engagement across all channels."
-  },
-  {
-    icon: <PenTool className="w-10 h-10" />,
-    title: "Content Creation",
-    description: "Compelling storytelling through high-quality visuals, copy, and multimedia experiences."
-  },
-  {
-    icon: <Globe className="w-10 h-10" />,
-    title: "Web Development",
-    description: "High-performance, responsive websites built with the latest technologies for seamless UX."
+    description: "We develop effective online marketing strategies using channels like social media, email, and ads to reach potential customers."
   },
   {
     icon: <BarChart3 className="w-10 h-10" />,
-    title: "SEO & Growth",
-    description: "Strategic optimization and growth hacking to ensure your brand stays on top of search results."
+    title: "Marketing Analytics",
+    description: "We provide deep insights and detailed reports on marketing performance to help businesses make informed decisions."
   },
   {
-    icon: <Cpu className="w-10 h-10" />,
-    title: "Strategy & Innovation",
-    description: "Forward-thinking consulting to help you navigate the ever-changing digital landscape."
+    icon: <Globe className="w-10 h-10" />,
+    title: "PR Support",
+    description: "We help businesses get media coverage and build relationships with relevant journalists and influencers."
   }
 ]
 
