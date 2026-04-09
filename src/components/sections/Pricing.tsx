@@ -8,40 +8,37 @@ import { Check } from "lucide-react"
 const plans = [
   {
     name: "Basic Plan",
-    price: "500k",
     description: "Essential tools for startups and small ventures.",
     features: [
-      "Limited features",
-      "Basic support",
-      "No customization",
-      "Limited usage",
-      "Limited storage"
+      "Brand Consultation",
+      "Standard Logo Design",
+      "Social Media Kit",
+      "Responsive UI",
+      "Cloud Hosting"
     ],
     is_popular: false
   },
   {
     name: "Standard Plan",
-    price: "650k",
     description: "Enhanced capabilities for growing businesses.",
     features: [
-      "More features",
-      "Standard support",
-      "Some customization",
-      "Increased usage",
-      "More storage"
+      "Advanced Strategy",
+      "Full Identity Suite",
+      "Social Management",
+      "Dynamic Website",
+      "Monthly Analytics"
     ],
     is_popular: true
   },
   {
     name: "Premium Plan",
-    price: "800k",
     description: "Full-service solution for market leaders.",
     features: [
-      "Full features",
-      "Priority support",
-      "Full customization",
-      "Unlimited usage",
-      "Premium support & consulting"
+      "VIP Consulting",
+      "Omnichannel Experience",
+      "Paid Ads Mastery",
+      "AI-Powered Insights",
+      "24/7 Priority Support"
     ],
     is_popular: false
   }
@@ -49,58 +46,61 @@ const plans = [
 
 export function Pricing() {
   return (
-    <Section id="pricing" className="bg-slate-50">
+    <Section id="packages" className="bg-white">
       <SectionHeader
         centered
         subtitle="Investment"
-        title="Ready to take your brand to the next level?"
+        title="Our Packages"
         description="Choose a plan that fits your current needs and scale as your brand grows."
+        className="mb-20"
       />
       
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
-        {plans.map((plan, index) => (
-          <motion.div
-            key={index}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
-            viewport={{ once: true }}
-            className={`p-10 rounded-[2rem] bg-white border ${plan.is_popular ? 'border-secondary ring-4 ring-secondary/5' : 'border-slate-100'} hover:shadow-2xl transition-all duration-500 relative flex flex-col h-full`}
-          >
-            {plan.is_popular && (
-              <div className="absolute top-0 right-10 -translate-y-1/2 bg-secondary text-white text-[10px] font-bold uppercase tracking-widest py-2 px-4 rounded-full shadow-lg">
-                Most Popular
-              </div>
-            )}
-            
-            <div className="mb-8">
-              <h3 className="text-xl font-bold text-primary mb-2">{plan.name}</h3>
-              <p className="text-muted-foreground text-sm leading-relaxed">{plan.description}</p>
-            </div>
-            
-            <div className="mb-8">
-              <span className="text-5xl font-extrabold tracking-tighter text-primary">{plan.price}</span>
-              <span className="text-muted-foreground ml-2">/month</span>
-            </div>
-            
-            <ul className="space-y-4 mb-10 flex-grow">
-              {plan.features.map((feature, idx) => (
-                <li key={idx} className="flex items-center gap-3 text-sm text-muted-foreground">
-                  <Check size={16} className="text-secondary flex-shrink-0" />
-                  <span>{feature}</span>
-                </li>
-              ))}
-            </ul>
-            
-            <Button 
-              variant={plan.is_popular ? "secondary" : "outline"} 
-              className="w-full rounded-2xl"
-              size="lg"
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-0 max-w-6xl mx-auto items-center">
+        {plans.map((plan, index) => {
+          const isStandard = plan.name === "Standard Plan"
+          
+          return (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              viewport={{ once: true }}
+              className={`p-10 rounded-[3rem] transition-all duration-500 relative flex flex-col z-10 ${
+                isStandard 
+                ? 'bg-primary text-white shadow-2xl scale-110 h-[580px] z-20' 
+                : 'bg-white text-primary border border-slate-100 hover:shadow-xl h-[520px]'
+              }`}
             >
-              Get Started
-            </Button>
-          </motion.div>
-        ))}
+              <div className="mb-8 text-center">
+                <h3 className={`text-lg font-black uppercase tracking-widest mb-4 ${isStandard ? 'text-secondary' : 'text-primary'}`}>{plan.name}</h3>
+                <p className={`text-[13px] leading-relaxed max-w-[240px] mx-auto ${isStandard ? 'text-white/70' : 'text-muted-foreground'}`}>{plan.description}</p>
+              </div>
+              
+              <div className="w-12 h-1 bg-secondary mx-auto mb-10 opacity-30" />
+              
+              <ul className="space-y-4 mb-10 flex-grow">
+                {plan.features.map((feature, idx) => (
+                  <li key={idx} className="flex items-center gap-3 text-[13px] font-medium">
+                    <Check size={14} className={isStandard ? 'text-secondary' : 'text-secondary'} strokeWidth={3} />
+                    <span className={isStandard ? 'text-white/80' : 'text-muted-foreground'}>{feature}</span>
+                  </li>
+                ))}
+              </ul>
+              
+              <Button 
+                variant={isStandard ? "secondary" : "outline"} 
+                className={`w-full rounded-2xl h-14 font-bold text-sm transition-transform hover:scale-105 ${
+                  isStandard 
+                  ? 'bg-white text-primary hover:bg-slate-50 border-none' 
+                  : 'border-2 border-primary text-primary hover:bg-primary hover:text-white'
+                }`}
+              >
+                Join Now
+              </Button>
+            </motion.div>
+          )
+        })}
       </div>
     </Section>
   )

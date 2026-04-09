@@ -5,25 +5,41 @@ export function Footer() {
   const currentYear = new Date().getFullYear()
 
   return (
-    <footer className="bg-primary text-white pt-20 pb-10">
-      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+    <footer className="bg-slate-50 text-primary pt-24 pb-12">
+      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16">
         {/* Brand */}
-        <div className="space-y-6">
-          <Link href="/" className="text-3xl font-bold tracking-tighter">
-            SPARKWELL<span className="text-secondary">.</span>
+        <div className="space-y-8">
+          <Link href="/" className="group block">
+            <img 
+              src="/logo.png" 
+              alt="Sparkwell Creative" 
+              className="h-12 w-auto object-contain mb-2"
+              onError={(e) => {
+                e.currentTarget.style.display = 'none';
+                e.currentTarget.nextElementSibling?.classList.remove('hidden');
+              }}
+            />
+            <div className="hidden">
+              <span className="text-2xl font-black tracking-tighter block">
+                SPARKWELL <span className="text-secondary">CREATIVE</span>
+              </span>
+            </div>
+            <span className="text-[9px] font-bold uppercase tracking-[0.4em] text-secondary group-hover:text-primary transition-colors">
+              Your Partner In Growth
+            </span>
           </Link>
-          <p className="text-white/70 leading-relaxed text-sm">
-            Empowering brands through digital innovation and creative excellence. 
-            We build the future of marketing with human-centered design.
+          <p className="text-muted-foreground leading-relaxed text-[13px] max-w-sm">
+            We're your dedicated partners in propelling business toward success. With a blend 
+            of expertise and innovation, we offer comprehensive solutions tailored to your needs.
           </p>
           <div className="flex items-center gap-4">
-            <Link href="#" className="p-2 bg-white/10 rounded-full hover:bg-secondary transition-colors">
+            <Link href="#" className="w-10 h-10 bg-white shadow-sm border border-slate-100 rounded-full flex items-center justify-center hover:bg-secondary hover:text-white transition-all">
               <Instagram size={18} />
             </Link>
-            <Link href="#" className="p-2 bg-white/10 rounded-full hover:bg-secondary transition-colors">
+            <Link href="#" className="w-10 h-10 bg-white shadow-sm border border-slate-100 rounded-full flex items-center justify-center hover:bg-secondary hover:text-white transition-all">
               <Linkedin size={18} />
             </Link>
-            <Link href="#" className="p-2 bg-white/10 rounded-full hover:bg-secondary transition-colors">
+            <Link href="#" className="w-10 h-10 bg-white shadow-sm border border-slate-100 rounded-full flex items-center justify-center hover:bg-secondary hover:text-white transition-all">
               <Twitter size={18} />
             </Link>
           </div>
@@ -31,58 +47,57 @@ export function Footer() {
 
         {/* Quick Links */}
         <div>
-          <h4 className="text-lg font-bold mb-6">Explore</h4>
-          <ul className="space-y-4 text-sm text-white/70">
-            <li><Link href="#services" className="hover:text-secondary transition-colors">Services</Link></li>
-            <li><Link href="#portfolio" className="hover:text-secondary transition-colors">Our Work</Link></li>
-            <li><Link href="#team" className="hover:text-secondary transition-colors">Expert Team</Link></li>
-            <li><Link href="#pricing" className="hover:text-secondary transition-colors">Pricing</Link></li>
+          <h4 className="text-xs font-black uppercase tracking-widest text-secondary mb-8">Navigation</h4>
+          <ul className="space-y-4 text-sm font-bold text-primary/70">
+            <li><Link href="#services" className="hover:text-secondary transition-colors">Digital Solutions</Link></li>
+            <li><Link href="#portfolio" className="hover:text-secondary transition-colors">Successful Partners</Link></li>
+            <li><Link href="#packages" className="hover:text-secondary transition-colors">Our Packages</Link></li>
           </ul>
         </div>
 
         {/* Contact info */}
         <div>
-          <h4 className="text-lg font-bold mb-6">Contact</h4>
-          <ul className="space-y-4 text-sm text-white/70">
-            <li className="flex items-center gap-3">
-              <Mail size={16} className="text-secondary" />
-              <span>hello@sparkwell.agency</span>
+          <h4 className="text-xs font-black uppercase tracking-widest text-secondary mb-8">Get In Touch</h4>
+          <ul className="space-y-6 text-sm font-bold text-primary/70">
+            <li className="flex items-center gap-4 group">
+              <div className="w-10 h-10 rounded-xl bg-white shadow-sm flex items-center justify-center text-secondary group-hover:bg-secondary group-hover:text-white transition-all">
+                <Mail size={16} />
+              </div>
+              <span className="italic">Sparkwell@outlook.com</span>
             </li>
-            <li className="flex items-center gap-3">
-              <Phone size={16} className="text-secondary" />
-              <span>+1 (555) 000-1234</span>
+            <li className="flex items-center gap-4 group">
+              <div className="w-10 h-10 rounded-xl bg-white shadow-sm flex items-center justify-center text-secondary group-hover:bg-secondary group-hover:text-white transition-all">
+                <Phone size={16} />
+              </div>
+              <span>+250 783663138</span>
             </li>
-            <li className="flex items-center gap-3">
-              <MapPin size={16} className="text-secondary" />
-              <span>San Francisco, CA 94103</span>
+            <li className="flex items-center gap-4 group">
+              <div className="w-10 h-10 rounded-xl bg-white shadow-sm flex items-center justify-center text-secondary group-hover:bg-secondary group-hover:text-white transition-all">
+                <MapPin size={16} />
+              </div>
+              <span>Kigali, Rwanda</span>
             </li>
           </ul>
         </div>
 
-        {/* Newsletter */}
-        <div>
-          <h4 className="text-lg font-bold mb-6">Stay Inspired</h4>
-          <p className="text-sm text-white/70 mb-4">
-            Subscribe to our newsletter for the latest insights.
+        {/* Mission Quote */}
+        <div className="bg-primary p-10 rounded-[2.5rem] relative overflow-hidden text-white flex flex-col justify-between">
+          <div className="absolute top-0 right-0 w-32 h-32 bg-secondary/10 rounded-full blur-3xl -z-0" />
+          <p className="text-sm italic italic leading-relaxed relative z-10">
+            "We're committed to empowering businesses to thrive in competitive markets."
           </p>
-          <form className="flex gap-2">
-            <input 
-              type="email" 
-              placeholder="Email address" 
-              className="bg-white/10 border-white/20 border rounded-full px-4 py-2 text-sm w-full focus:outline-none focus:ring-1 focus:ring-secondary"
-            />
-            <button className="bg-secondary p-2 rounded-full hover:opacity-90 transition-opacity">
-              <Mail size={18} />
-            </button>
-          </form>
+          <div className="mt-8 relative z-10">
+            <div className="h-1 w-12 bg-secondary rounded-full mb-2" />
+            <p className="text-[10px] font-black uppercase tracking-widest">Growth Mission</p>
+          </div>
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 mt-20 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-white/40">
+      <div className="max-w-7xl mx-auto px-6 mt-24 pt-8 border-t border-slate-200 flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] font-bold uppercase tracking-widest text-primary/30">
         <p>© {currentYear} Sparkwell Creative Agency. All rights reserved.</p>
-        <div className="flex gap-6">
-          <Link href="#" className="hover:text-white transition-colors">Privacy Policy</Link>
-          <Link href="#" className="hover:text-white transition-colors">Terms of Service</Link>
+        <div className="flex gap-8">
+          <Link href="#" className="hover:text-secondary transition-colors">Privacy Policy</Link>
+          <Link href="#" className="hover:text-secondary transition-colors">Terms of Service</Link>
         </div>
       </div>
     </footer>

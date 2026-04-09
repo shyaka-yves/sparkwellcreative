@@ -38,28 +38,40 @@ export function Navbar() {
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <Link href="/" className="flex flex-col items-start leading-none group">
           <div className="flex items-center gap-1">
-            <span className="text-xl md:text-2xl font-black tracking-widest text-[#024975]">
-              SPARKWELL
-            </span>
-            <div className="w-6 h-6 rounded-sm bg-gradient-to-tr from-[#024975] to-[#0b97dc] flex items-center justify-center p-1">
-              <div className="w-full h-full border-t-2 border-r-2 border-white rounded-tr-sm" />
+            <img 
+              src="/logo.png" 
+              alt="Sparkwell Creative" 
+              className="h-10 w-auto object-contain"
+              onError={(e) => {
+                // Fallback to text if image fails to load
+                e.currentTarget.style.display = 'none';
+                e.currentTarget.nextElementSibling?.classList.remove('hidden');
+              }}
+            />
+            <div className="hidden flex items-center gap-1">
+              <span className="text-xl md:text-2xl font-black tracking-widest text-[#024975]">
+                SPARKWELL
+              </span>
+              <div className="w-6 h-6 rounded-sm bg-gradient-to-tr from-[#024975] to-[#0b97dc] flex items-center justify-center p-1">
+                <div className="w-full h-full border-t-2 border-r-2 border-white rounded-tr-sm" />
+              </div>
+              <span className="text-xl md:text-2xl font-black tracking-widest text-[#024975]">
+                REATIVE
+              </span>
             </div>
-            <span className="text-xl md:text-2xl font-black tracking-widest text-[#024975]">
-              REATIVE
-            </span>
           </div>
-          <span className="text-[8px] md:text-[10px] font-bold tracking-[0.3em] text-[#0b97dc] uppercase mt-1">
+          <span className="text-[7px] md:text-[9px] font-bold tracking-[0.3em] text-[#0b97dc] uppercase mt-1">
             Your Partner in Growth
           </span>
         </Link>
 
         {/* Desktop Nav */}
-        <nav className="hidden lg:flex items-center gap-6 xl:gap-10 text-sm font-medium">
+        <nav className="hidden lg:flex items-center gap-6 xl:gap-8 text-[13px] font-medium">
           {navLinks.map((link) => (
             <Link
               key={link.name}
               href={link.href}
-              className="text-foreground/80 hover:text-primary transition-all duration-200 font-semibold"
+              className="text-foreground/80 hover:text-primary transition-all duration-200 font-bold"
             >
               {link.name}
             </Link>

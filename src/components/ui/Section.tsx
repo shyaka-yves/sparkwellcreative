@@ -54,11 +54,11 @@ export function SectionHeader({
           {subtitle}
         </span>
       ) }
-      <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight text-primary mb-6">
+      <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight text-primary mb-6">
         {title}
       </h2>
       {description && (
-        <p className="text-lg text-muted-foreground leading-relaxed">
+        <p className="text-base text-muted-foreground leading-relaxed">
           {description}
         </p>
       )}

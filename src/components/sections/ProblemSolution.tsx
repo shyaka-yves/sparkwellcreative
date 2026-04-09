@@ -2,7 +2,8 @@
 
 import { motion } from "framer-motion"
 import { Section, SectionHeader } from "@/components/ui/Section"
-import { AlertCircle, CheckCircle2, TrendingUp } from "lucide-react"
+import { AlertCircle, CheckCircle2, TrendingUp, ArrowRight } from "lucide-react"
+import { Button } from "@/components/ui/Button"
 
 const challenges = [
   {
@@ -24,56 +25,85 @@ const challenges = [
 
 export function ProblemSolution() {
   return (
-    <Section className="bg-white">
-      <SectionHeader
-        centered
-        subtitle="The Challenge"
-        title="Why brands struggle in the digital age."
-        description="The digital landscape is evolving at breakneck speed. Many brands fail to keep up, leading to lost relevance and missed opportunities."
-      />
-      
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-        {challenges.map((item, index) => (
-          <motion.div
-            key={index}
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
-            viewport={{ once: true }}
-            className="p-8 rounded-3xl bg-slate-50 border border-slate-100 hover:shadow-xl transition-all duration-300 group"
-          >
-            <div className="mb-6 transform group-hover:scale-110 transition-transform duration-300">
-              {item.icon}
+    <Section id="challenges" className="bg-white">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+        <motion.div
+          initial={{ opacity: 0, x: -30 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
+          <SectionHeader
+            subtitle="The Challenge"
+            title="Why Many Brands Fail"
+            description="The digital landscape is evolving at breakneck speed. Many brands fail to keep up, leading to lost relevance and missed opportunities."
+            className="mb-12"
+          />
+          
+          <div className="space-y-10">
+            {challenges.map((item, index) => (
+              <div key={index} className="flex gap-6 group">
+                <div className="w-14 h-14 rounded-2xl bg-slate-50 border border-slate-100 flex items-center justify-center text-primary group-hover:bg-secondary group-hover:text-white transition-all duration-300 flex-shrink-0">
+                  {item.icon}
+                </div>
+                <div>
+                  <h3 className="text-lg font-bold text-primary mb-2 group-hover:text-secondary transition-colors">{item.title}</h3>
+                  <p className="text-muted-foreground text-sm leading-relaxed max-w-md">
+                    {item.description}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <Button variant="outline" className="mt-12 group rounded-full px-8 border-secondary text-secondary hover:bg-secondary hover:text-white">
+            Discover Our Method
+            <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+          </Button>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1 }}
+          viewport={{ once: true }}
+          className="relative"
+        >
+          <div className="aspect-square rounded-[3rem] overflow-hidden shadow-2xl relative group">
+            <img 
+              src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070&auto=format&fit=crop" 
+              alt="Strategic Planning" 
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+            />
+            <div className="absolute inset-0 bg-primary/20 mix-blend-multiply opacity-60" />
+            
+            {/* Overlay Graph Element Concept */}
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div className="w-4/5 h-4/5 border-l-2 border-b-2 border-white/40 flex items-end p-8">
+                <motion.div 
+                  initial={{ width: 0, height: 0 }}
+                  whileInView={{ width: "100%", height: "100%" }}
+                  transition={{ duration: 1.5, ease: "easeOut" }}
+                  className="bg-gradient-to-tr from-secondary/40 to-white/10 rounded-tr-[100px] border-t-4 border-r-4 border-secondary shadow-lg backdrop-blur-sm"
+                />
+              </div>
             </div>
-            <h3 className="text-xl font-bold text-primary mb-4">{item.title}</h3>
-            <p className="text-muted-foreground leading-relaxed">
-              {item.description}
+          </div>
+          
+          {/* Floating result card */}
+          <div className="absolute -bottom-8 -right-8 bg-white p-8 rounded-3xl shadow-2xl border border-slate-100 max-w-xs">
+            <div className="flex items-center gap-4 mb-4">
+              <div className="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center text-green-600">
+                <TrendingUp size={20} />
+              </div>
+              <span className="font-bold text-primary italic">Success Blueprint</span>
+            </div>
+            <p className="text-sm text-muted-foreground leading-relaxed">
+              Our <span className="text-secondary font-bold">Innovative Solutions</span> ensure your venture stays ahead of the curve through agile adaptation.
             </p>
-          </motion.div>
-        ))}
+          </div>
+        </motion.div>
       </div>
-      
-      <motion.div 
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 1 }}
-        className="mt-24 p-12 bg-primary text-white rounded-[2rem] relative overflow-hidden text-center lg:text-left"
-      >
-        <div className="absolute top-0 right-0 w-64 h-64 bg-secondary/20 rounded-full blur-3xl -z-10 translate-x-1/2 -translate-y-1/2" />
-        <div className="lg:flex items-center justify-between gap-12">
-          <div className="max-w-xl">
-            <h3 className="text-3xl md:text-4xl font-bold mb-6 italic">Our <span className="text-secondary">Innovative Solutions</span> for your business.</h3>
-            <p className="text-white/70 mb-8 lg:mb-0 text-lg">
-              Through USP identification, cohesive brand guidelines, and an agile marketing 
-              approach, we ensure your venture stays ahead of the curve.
-            </p>
-          </div>
-          <div className="flex flex-col items-center gap-4">
-            <div className="text-5xl font-extrabold tracking-tighter">85%</div>
-            <div className="text-[10px] font-bold uppercase tracking-widest text-secondary text-center">Average ROI Increase</div>
-          </div>
-        </div>
-      </motion.div>
     </Section>
   )
 }

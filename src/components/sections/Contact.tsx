@@ -40,51 +40,65 @@ export function Contact() {
   }
 
   return (
-    <Section id="contact" className="bg-white">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+    <Section id="contact" className="bg-slate-50/30">
+      <SectionHeader
+        centered
+        subtitle="Contact"
+        title="Let's Build Something"
+        description="Your brand is just one step away from achieving its full potential. Let's start the conversation."
+        className="mb-20"
+      />
+      
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-stretch max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, x: -30 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
+          className="flex flex-col justify-between"
         >
-          <SectionHeader
-            subtitle="Get in Touch"
-            title="Let's build something legendary together."
-            description="Have a project in mind? Or just want to say hello? Drop us a message and our team will get back to you within 24 hours."
-            className="mb-12"
-          />
-          
-          <div className="space-y-10">
-            <div className="flex gap-6 items-start">
-              <div className="w-14 h-14 rounded-2xl bg-secondary/10 flex items-center justify-center text-secondary flex-shrink-0">
-                <Mail size={24} />
-              </div>
-              <div>
-                <h5 className="font-bold text-primary mb-1 italic">Email us</h5>
-                <p className="text-muted-foreground">Sparkwell@outlook.com</p>
+          <div className="space-y-12">
+            <div>
+              <h4 className="text-xs font-black uppercase tracking-[0.3em] text-secondary mb-6">Connect With Us</h4>
+              <div className="space-y-8">
+                <div className="flex items-center gap-6 group">
+                  <div className="w-12 h-12 rounded-2xl bg-white shadow-sm flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all">
+                    <Mail size={20} />
+                  </div>
+                  <div>
+                    <p className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground mb-1">Email us</p>
+                    <p className="text-xl font-bold text-primary italic">Sparkwell@outlook.com</p>
+                  </div>
+                </div>
+                
+                <div className="flex items-center gap-6 group">
+                  <div className="w-12 h-12 rounded-2xl bg-white shadow-sm flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all">
+                    <Phone size={20} />
+                  </div>
+                  <div>
+                    <p className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground mb-1">Call us</p>
+                    <p className="text-xl font-bold text-primary italic">+250 783663138</p>
+                  </div>
+                </div>
+                
+                <div className="flex items-center gap-6 group">
+                  <div className="w-12 h-12 rounded-2xl bg-white shadow-sm flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all">
+                    <MapPin size={20} />
+                  </div>
+                  <div>
+                    <p className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground mb-1">Our HQ</p>
+                    <p className="text-xl font-bold text-primary italic">Kigali, Rwanda</p>
+                  </div>
+                </div>
               </div>
             </div>
             
-            <div className="flex gap-6 items-start">
-              <div className="w-14 h-14 rounded-2xl bg-secondary/10 flex items-center justify-center text-secondary flex-shrink-0">
-                <Phone size={24} />
-              </div>
-              <div>
-                <h5 className="font-bold text-primary mb-1 italic">Call us</h5>
-                <p className="text-muted-foreground">+250 783663138</p>
-                <p className="text-muted-foreground">Mon-Fri, 9am - 6pm CAT</p>
-              </div>
-            </div>
-            
-            <div className="flex gap-6 items-start">
-              <div className="w-14 h-14 rounded-2xl bg-secondary/10 flex items-center justify-center text-secondary flex-shrink-0">
-                <MapPin size={24} />
-              </div>
-              <div>
-                <h5 className="font-bold text-primary mb-1 italic">Our HQ</h5>
-                <p className="text-muted-foreground">Kigali, Rwanda</p>
-              </div>
+            <div className="p-8 rounded-[2rem] bg-primary text-white relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-secondary/20 rounded-full blur-2xl flex-shrink-0" />
+              <p className="text-sm font-medium leading-relaxed relative z-10">
+                "Our collaborative approach ensures that we're not just service providers but invested advocates for your growth."
+              </p>
+              <p className="mt-4 text-[10px] font-bold uppercase tracking-widest text-secondary relative z-10">- SPARKWELL CORE VALUE</p>
             </div>
           </div>
         </motion.div>
@@ -94,58 +108,58 @@ export function Contact() {
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
           viewport={{ once: true }}
-          className="bg-slate-50 p-10 md:p-12 rounded-[3rem] border border-slate-100 shadow-xl"
+          className="bg-white p-10 md:p-14 rounded-[3rem] shadow-2xl border border-slate-100"
         >
-          <form onSubmit={handleSubmit} className="space-y-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="space-y-2">
-                <label className="text-xs font-bold uppercase tracking-widest text-primary ml-1">Your Name</label>
+          <form onSubmit={handleSubmit} className="space-y-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="space-y-3">
+                <label className="text-[10px] font-bold uppercase tracking-widest text-primary ml-1">Your Name</label>
                 <input 
                   required
                   name="name"
                   type="text" 
-                  placeholder="John Doe" 
-                  className="w-full bg-white border-transparent border focus:border-secondary rounded-2xl px-6 py-4 text-sm focus:outline-none transition-all shadow-sm"
+                  placeholder="e.g. John Doe" 
+                  className="w-full bg-slate-50 border-none rounded-2xl px-6 py-4 text-sm focus:ring-2 focus:ring-secondary/20 focus:outline-none transition-all"
                 />
               </div>
-              <div className="space-y-2">
-                <label className="text-xs font-bold uppercase tracking-widest text-primary ml-1">Email Address</label>
+              <div className="space-y-3">
+                <label className="text-[10px] font-bold uppercase tracking-widest text-primary ml-1">Email Address</label>
                 <input 
                   required
                   name="email"
                   type="email" 
-                  placeholder="john@example.com" 
-                  className="w-full bg-white border-transparent border focus:border-secondary rounded-2xl px-6 py-4 text-sm focus:outline-none transition-all shadow-sm"
+                  placeholder="e.g. john@example.com" 
+                  className="w-full bg-slate-50 border-none rounded-2xl px-6 py-4 text-sm focus:ring-2 focus:ring-secondary/20 focus:outline-none transition-all"
                 />
               </div>
             </div>
             
-            <div className="space-y-2">
-              <label className="text-xs font-bold uppercase tracking-widest text-primary ml-1">Subject</label>
+            <div className="space-y-3">
+              <label className="text-[10px] font-bold uppercase tracking-widest text-primary ml-1">Subject</label>
               <input 
                 required
                 name="subject"
                 type="text" 
                 placeholder="How can we help?" 
-                className="w-full bg-white border-transparent border focus:border-secondary rounded-2xl px-6 py-4 text-sm focus:outline-none transition-all shadow-sm"
+                className="w-full bg-slate-50 border-none rounded-2xl px-6 py-4 text-sm focus:ring-2 focus:ring-secondary/20 focus:outline-none transition-all"
               />
             </div>
             
-            <div className="space-y-2">
-              <label className="text-xs font-bold uppercase tracking-widest text-primary ml-1">Message</label>
+            <div className="space-y-3">
+              <label className="text-[10px] font-bold uppercase tracking-widest text-primary ml-1">Message</label>
               <textarea 
                 required
                 name="message"
                 rows={5}
                 placeholder="Tell us about your project..." 
-                className="w-full bg-white border-transparent border focus:border-secondary rounded-2xl px-6 py-4 text-sm focus:outline-none resize-none transition-all shadow-sm"
+                className="w-full bg-slate-50 border-none rounded-2xl px-6 py-4 text-sm focus:ring-2 focus:ring-secondary/20 focus:outline-none resize-none transition-all"
               ></textarea>
             </div>
             
             <Button 
               disabled={loading}
               type="submit" 
-              className="w-full rounded-2xl h-16 text-lg group"
+              className="w-full rounded-2xl h-16 text-base font-black tracking-widest uppercase group bg-primary hover:bg-primary/90 text-white"
             >
               {loading ? (
                 <Loader2 className="w-6 h-6 animate-spin" />
@@ -161,14 +175,14 @@ export function Contact() {
               <motion.p 
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="text-green-600 text-sm font-bold text-center mt-4"
+                className="text-green-600 text-xs font-bold text-center"
               >
                 Message sent successfully! We'll be in touch soon.
               </motion.p>
             )}
             
             {error && (
-              <p className="text-red-500 text-sm font-bold text-center mt-4">{error}</p>
+              <p className="text-red-500 text-xs font-bold text-center">{error}</p>
             )}
           </form>
         </motion.div>

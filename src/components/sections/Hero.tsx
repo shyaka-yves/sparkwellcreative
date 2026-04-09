@@ -6,90 +6,99 @@ import { ArrowRight, Play } from "lucide-react"
 
 export function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center pt-20 overflow-hidden bg-white">
-      {/* Background Elements */}
-      <div className="absolute top-0 right-0 w-1/2 h-full bg-slate-50 -z-10 skew-x-12 translate-x-1/4" />
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-secondary/5 rounded-full blur-3xl -z-10" />
-      
-      <div className="max-w-7xl mx-auto px-6 w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-        <motion.div
-          initial={{ opacity: 0, x: -30 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-        >
+    <section className="relative min-h-[110vh] flex flex-col justify-center overflow-hidden">
+      {/* Background Image with Overlay */}
+      <div className="absolute inset-0 z-0">
+        <img 
+          src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop" 
+          className="w-full h-full object-cover"
+          alt="Team collaboration"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-primary/90 via-primary/70 to-primary/40 -z-5" />
+      </div>
+
+      <div className="max-w-7xl mx-auto px-6 w-full relative z-10 pt-20">
+        <div className="max-w-4xl mx-auto text-center mb-24">
           <motion.span 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.2 }}
-            className="text-secondary font-bold uppercase tracking-[0.3em] text-[10px] mb-6 block"
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="text-secondary font-bold uppercase tracking-[0.4em] text-[10px] md:text-xs mb-8 block"
           >
             Creative Digital Agency
           </motion.span>
           
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter text-primary leading-[0.9] mb-8">
-            Propelling <br /> 
-            <span className="text-secondary italic">Business</span> toward <br />
-            Success.
-          </h1>
+          <motion.h1 
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8 }}
+            className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tighter text-white leading-[1] mb-10"
+          >
+            We Drive Growth <br /> 
+            Through <span className="text-secondary italic">Design.</span>
+          </motion.h1>
           
-          <p className="text-lg md:text-xl text-muted-foreground mb-10 max-w-lg leading-relaxed">
-            We're your dedicated partners in growth. With a blend of expertise and innovation, we offer 
-            comprehensive solutions tailored to meet the specific needs of each venture.
-          </p>
+          <motion.p 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.3 }}
+            className="text-base md:text-lg text-white/80 mb-12 max-w-2xl mx-auto leading-relaxed"
+          >
+            We're your dedicated partners in propelling business toward success. 
+            With a blend of expertise and innovation, we offer comprehensive solutions 
+            tailored to your venture.
+          </motion.p>
           
-          <div className="flex flex-wrap gap-4">
-            <Button size="lg" className="group">
-              View Our Work
-              <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5 }}
+            className="flex flex-center justify-center gap-6"
+          >
+            <Button size="lg" className="bg-secondary hover:bg-secondary/90 text-white rounded-full px-12 h-14 text-base font-bold group">
+              Tell Me More
+              <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Button>
-            <Button variant="outline" size="lg" className="group">
-              <Play className="mr-2 w-4 h-4 fill-primary" />
-              Watch Reel
-            </Button>
-          </div>
-          
-          <div className="mt-16 flex items-center gap-8 grayscale opacity-40">
-            <span className="text-[10px] font-bold uppercase tracking-widest text-primary">Trusted by</span>
-            <div className="flex gap-6 items-center font-bold text-xl tracking-tighter">
-              <span>FORBES</span>
-              <span>TECH</span>
-              <span>WIRED</span>
-            </div>
-          </div>
-        </motion.div>
-        
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9, rotate: 2 }}
-          animate={{ opacity: 1, scale: 1, rotate: 0 }}
-          transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
-          className="relative hidden lg:block"
-        >
-          <div className="relative aspect-[4/5] w-full max-w-md mx-auto">
-            <div className="absolute inset-0 bg-primary/5 rounded-2xl transform translate-x-6 translate-y-6 -z-10" />
-            <div className="absolute inset-0 border-2 border-secondary/20 rounded-2xl transform -translate-x-6 -translate-y-6 -z-10" />
-            <img 
-              src="https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=2070&auto=format&fit=crop" 
-              alt="Sparkwell Agency Team" 
-              className="w-full h-full object-cover rounded-2xl shadow-2xl"
-            />
-            
-            {/* Decorative Card */}
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
+          </motion.div>
+        </div>
+
+        {/* Floating Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 translate-y-12">
+          {[
+            {
+              title: "Strategic Growth",
+              description: "Drive your business forward with data-driven insights and market-leading strategies.",
+              icon: <ArrowRight className="w-5 h-5" />
+            },
+            {
+              title: "Creative Identity",
+              description: "Beautifully crafted visual identities that capture your essence and build trust.",
+              icon: <ArrowRight className="w-5 h-5" />
+            },
+            {
+              title: "Market Excellence",
+              description: "Staying ahead of trends with innovative marketing and agile adaptation.",
+              icon: <ArrowRight className="w-5 h-5" />
+            }
+          ].map((card, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.8 }}
-              className="absolute -bottom-10 -left-10 bg-white p-6 rounded-xl shadow-xl flex items-center gap-4"
+              transition={{ delay: 0.8 + index * 0.15 }}
+              whileHover={{ y: -10 }}
+              className="bg-white/95 backdrop-blur-md p-10 rounded-3xl shadow-2xl border border-white/20 group cursor-pointer"
             >
-              <div className="w-12 h-12 bg-secondary/10 rounded-full flex items-center justify-center text-secondary">
-                <span className="font-bold">98%</span>
+              <div className="w-12 h-12 bg-secondary/10 rounded-2xl flex items-center justify-center text-secondary mb-6 group-hover:bg-secondary group-hover:text-white transition-all">
+                {card.icon}
               </div>
-              <div>
-                <p className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground">Client Retention</p>
-                <p className="text-sm font-bold text-primary italic">"Exceptional Growth"</p>
-              </div>
+              <h3 className="text-lg font-bold text-primary mb-4">{card.title}</h3>
+              <p className="text-muted-foreground text-[13px] leading-relaxed mb-6">
+                {card.description}
+              </p>
+              <div className="text-[10px] font-bold uppercase tracking-widest text-secondary group-hover:underline">Learn More</div>
             </motion.div>
-          </div>
-        </motion.div>
+          ))}
+        </div>
       </div>
     </section>
   )
