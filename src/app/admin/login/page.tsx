@@ -36,7 +36,18 @@ export default function LoginPage() {
     <div className="min-h-screen flex items-center justify-center bg-slate-50 px-6">
       <div className="max-w-md w-full bg-white p-10 rounded-[2rem] shadow-2xl border border-slate-100">
         <div className="text-center mb-10">
-          <h1 className="text-3xl font-bold text-primary tracking-tighter mb-2">SPARKWELL<span className="text-secondary">.</span></h1>
+          <img 
+            src="/logo.png" 
+            alt="Sparkwell Creative" 
+            className="h-16 md:h-20 w-auto object-contain mx-auto mb-4"
+            onError={(e) => {
+              e.currentTarget.style.display = 'none';
+              e.currentTarget.nextElementSibling?.classList.remove('hidden');
+            }}
+          />
+          <div className="hidden">
+            <h1 className="text-3xl font-bold text-primary tracking-tighter mb-2">SPARKWELL<span className="text-secondary">.</span></h1>
+          </div>
           <p className="text-muted-foreground text-sm font-medium">Admin Dashboard Access</p>
         </div>
 

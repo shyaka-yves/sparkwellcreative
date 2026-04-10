@@ -1,10 +1,16 @@
 "use client"
 
 import Link from "next/link"
+import { usePathname } from "next/navigation"
 import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin } from "lucide-react"
 
 export function Footer() {
+  const pathname = usePathname()
   const currentYear = new Date().getFullYear()
+
+  if (pathname.startsWith('/admin')) {
+    return null
+  }
 
   return (
     <footer className="bg-slate-50 text-primary pt-24 pb-12">
