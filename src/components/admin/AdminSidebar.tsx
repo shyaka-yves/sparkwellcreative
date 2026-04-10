@@ -37,10 +37,23 @@ export function AdminSidebar() {
   return (
     <aside className="w-64 bg-white border-r border-slate-100 flex flex-col h-screen fixed top-0 left-0 z-40">
       <div className="p-8 border-bottom border-slate-50">
-        <Link href="/" className="text-xl font-bold text-primary tracking-tighter">
-          SPARKWELL<span className="text-secondary">.</span>
+        <Link href="/" className="group inline-block transition-transform hover:scale-105">
+          <img 
+            src="/logo.png" 
+            alt="Sparkwell Creative" 
+            className="h-12 w-auto object-contain"
+            onError={(e) => {
+              e.currentTarget.style.display = 'none';
+              e.currentTarget.nextElementSibling?.classList.remove('hidden');
+            }}
+          />
+          <div className="hidden">
+            <span className="text-xl font-bold text-primary tracking-tighter block">
+              SPARKWELL<span className="text-secondary">.</span>
+            </span>
+          </div>
         </Link>
-        <p className="text-[10px] uppercase tracking-widest text-muted-foreground mt-1 font-bold">Admin Panel</p>
+        <p className="text-[10px] uppercase tracking-widest text-muted-foreground mt-3 font-bold">Admin Panel</p>
       </div>
 
       <nav className="flex-grow p-4 space-y-2">
