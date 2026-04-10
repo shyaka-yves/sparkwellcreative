@@ -46,7 +46,7 @@ export function Pricing() {
         className="mb-20"
       />
       
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-7xl mx-auto items-stretch px-4">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto items-stretch px-4">
         {plans.map((plan, index) => {
           const isStandard = plan.is_standard
           
@@ -57,21 +57,21 @@ export function Pricing() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className={`p-10 rounded-[3rem] transition-all duration-500 relative flex flex-col border-2 ${
+              className={`p-6 md:p-8 rounded-[2.5rem] transition-all duration-500 relative flex flex-col border-2 ${
                 isStandard 
                 ? 'bg-primary text-white border-primary shadow-2xl scale-105 z-10' 
                 : 'bg-white text-primary border-primary hover:shadow-xl'
               }`}
             >
-              <h3 className="text-3xl font-bold mb-8">{plan.name}</h3>
+              <h3 className="text-2xl font-bold mb-6">{plan.name}</h3>
               
-              <div className="space-y-8 flex-grow mb-12">
+              <div className="space-y-6 flex-grow mb-8">
                 <div>
-                  <h4 className="font-semibold mb-4 text-lg">Features:</h4>
-                  <ul className="space-y-2">
+                  <h4 className="font-semibold mb-3 text-base">Features:</h4>
+                  <ul className="space-y-1.5">
                     {plan.content.features.map((item, idx) => (
-                      <li key={idx} className="flex items-start gap-3 text-base">
-                        <span className="mt-2 w-1.5 h-1.5 rounded-full bg-current flex-shrink-0" />
+                      <li key={idx} className="flex items-start gap-3 text-sm">
+                        <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-current flex-shrink-0" />
                         <span>{item}</span>
                       </li>
                     ))}
@@ -79,11 +79,11 @@ export function Pricing() {
                 </div>
 
                 <div>
-                  <h4 className="font-semibold mb-4 text-lg">Usage Limits:</h4>
-                  <ul className="space-y-2">
+                  <h4 className="font-semibold mb-3 text-base">Usage Limits:</h4>
+                  <ul className="space-y-1.5">
                     {plan.content.usageLimits.map((item, idx) => (
-                      <li key={idx} className="flex items-start gap-3 text-base">
-                        <span className="mt-2 w-1.5 h-1.5 rounded-full bg-current flex-shrink-0" />
+                      <li key={idx} className="flex items-start gap-3 text-sm">
+                        <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-current flex-shrink-0" />
                         <span>{item}</span>
                       </li>
                     ))}
@@ -91,11 +91,11 @@ export function Pricing() {
                 </div>
 
                 <div>
-                  <h4 className="font-semibold mb-4 text-lg">Additional Services:</h4>
-                  <ul className="space-y-2">
+                  <h4 className="font-semibold mb-3 text-base">Additional Services:</h4>
+                  <ul className="space-y-1.5">
                     {plan.content.additionalServices.map((item, idx) => (
-                      <li key={idx} className="flex items-start gap-3 text-base">
-                        <span className="mt-2 w-1.5 h-1.5 rounded-full bg-current flex-shrink-0" />
+                      <li key={idx} className="flex items-start gap-3 text-sm">
+                        <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-current flex-shrink-0" />
                         <span>{item}</span>
                       </li>
                     ))}
@@ -105,7 +105,7 @@ export function Pricing() {
               
               <Button 
                 variant={isStandard ? "secondary" : "default"} 
-                className={`w-full rounded-full h-14 font-bold text-xl transition-all shadow-lg ${
+                className={`w-full rounded-full h-12 font-bold text-lg transition-all shadow-md ${
                   isStandard 
                   ? 'bg-white text-primary hover:bg-slate-100' 
                   : 'bg-primary text-white hover:bg-primary/90'

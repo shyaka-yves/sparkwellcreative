@@ -17,10 +17,10 @@ export function Section({
 }: SectionProps) {
   const paddingClasses = {
     none: "",
-    sm: "py-10 md:py-16",
-    md: "py-16 md:py-24",
-    lg: "py-24 md:py-32",
-    xl: "py-32 md:py-48",
+    sm: "py-6 md:py-10",
+    md: "py-10 md:py-16",
+    lg: "py-10 md:py-20",
+    xl: "py-20 md:py-32",
   }
 
   return (

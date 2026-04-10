@@ -36,7 +36,7 @@ export function Portfolio() {
               <img 
                 src={`/partners/${partner.slug}.png`}
                 alt={partner.name}
-                className="max-h-16 md:max-h-20 w-auto object-contain transition-all duration-500 grayscale group-hover:grayscale-0 group-hover:scale-110"
+                className="max-h-16 md:max-h-20 w-auto object-contain transition-all duration-500 group-hover:scale-110"
                 onError={(e) => {
                   e.currentTarget.style.display = 'none';
                   e.currentTarget.nextElementSibling?.classList.remove('hidden');

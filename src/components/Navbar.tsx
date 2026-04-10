@@ -54,20 +54,23 @@ export function Navbar() {
           </div>
         </Link>
 
-        {/* Desktop Nav */}
-        <nav className="hidden lg:flex items-center gap-6 xl:gap-8 text-[13px] font-medium">
+        {/* Desktop Nav - Centered */}
+        <nav className="hidden lg:flex items-center gap-6 xl:gap-8 text-[13px] font-medium absolute left-1/2 -translate-x-1/2">
           {navLinks.map((link) => (
             <Link
               key={link.name}
               href={link.href}
-              className="text-foreground/80 hover:text-primary transition-all duration-200 font-bold"
+              className="text-foreground/80 hover:text-primary transition-all duration-200 font-bold whitespace-nowrap"
             >
               {link.name}
             </Link>
           ))}
+        </nav>
+
+        <div className="hidden lg:block">
           <Button 
             variant="default" 
-            className="bg-[#024975] hover:bg-[#024975]/90 rounded-full px-8 py-6 h-auto flex items-center gap-2 font-bold group"
+            className="bg-[#024975] hover:bg-[#024975]/90 rounded-full px-6 py-3 h-auto flex items-center gap-2 font-bold group"
           >
             Contact
             <div className="w-5 h-5 rounded-full bg-white/10 flex items-center justify-center transition-transform group-hover:translate-x-1">
@@ -84,7 +87,7 @@ export function Navbar() {
               </svg>
             </div>
           </Button>
-        </nav>
+        </div>
 
 
         {/* Mobile Toggle */}

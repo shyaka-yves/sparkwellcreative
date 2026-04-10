@@ -92,12 +92,8 @@ export function Footer() {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 mt-24 pt-8 border-t border-slate-200 flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] font-bold uppercase tracking-widest text-primary/30">
+      <div className="max-w-7xl mx-auto px-6 mt-24 pt-8 border-t border-slate-200 flex justify-center items-center text-sm font-bold uppercase tracking-widest text-primary/30 text-center">
         <p>© {currentYear} Sparkwell Creative Agency. All rights reserved.</p>
-        <div className="flex gap-8">
-          <Link href="#" className="hover:text-secondary transition-colors">Privacy Policy</Link>
-          <Link href="#" className="hover:text-secondary transition-colors">Terms of Service</Link>
-        </div>
       </div>
     </footer>
   )
