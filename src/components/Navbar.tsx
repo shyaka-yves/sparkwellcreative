@@ -70,6 +70,7 @@ export function Navbar() {
         <div className="hidden lg:block">
           <Button 
             variant="default" 
+            onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
             className="bg-[#024975] hover:bg-[#024975]/90 rounded-full px-6 py-3 h-auto flex items-center gap-2 font-bold group"
           >
             Contact
@@ -122,7 +123,10 @@ export function Navbar() {
             <Button 
               variant="default" 
               className="w-full bg-[#024975] hover:bg-[#024975]/90 rounded-full py-6 flex items-center justify-center gap-2 font-bold"
-              onClick={() => setIsOpen(false)}
+              onClick={() => {
+                setIsOpen(false);
+                document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+              }}
             >
               Contact
               <div className="w-5 h-5 rounded-full bg-white/10 flex items-center justify-center">
