@@ -8,39 +8,30 @@ import { Check } from "lucide-react"
 const plans = [
   {
     name: "Basic Plan",
-    description: "Essential tools for startups and small ventures.",
-    features: [
-      "Brand Consultation",
-      "Standard Logo Design",
-      "Social Media Kit",
-      "Responsive UI",
-      "Cloud Hosting"
-    ],
-    is_popular: false
+    content: {
+      features: ["Limited features", "Basic support", "No customization"],
+      usageLimits: ["Limited usage", "Limited storage"],
+      additionalServices: ["No additional services included"]
+    },
+    is_standard: false
   },
   {
     name: "Standard Plan",
-    description: "Enhanced capabilities for growing businesses.",
-    features: [
-      "Advanced Strategy",
-      "Full Identity Suite",
-      "Social Management",
-      "Dynamic Website",
-      "Monthly Analytics"
-    ],
-    is_popular: true
+    content: {
+      features: ["More features", "Standard support", "Some customization"],
+      usageLimits: ["Increased usage", "More storage"],
+      additionalServices: ["Optional add-ons available"]
+    },
+    is_standard: true
   },
   {
     name: "Premium Plan",
-    description: "Full-service solution for market leaders.",
-    features: [
-      "VIP Consulting",
-      "Omnichannel Experience",
-      "Paid Ads Mastery",
-      "AI-Powered Insights",
-      "24/7 Priority Support"
-    ],
-    is_popular: false
+    content: {
+      features: ["Full features", "Priority support", "Full customization"],
+      usageLimits: ["Unlimited usage", "Unlimited storage"],
+      additionalServices: ["Premium support and consulting included"]
+    },
+    is_standard: false
   }
 ]
 
@@ -55,48 +46,72 @@ export function Pricing() {
         className="mb-20"
       />
       
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-0 max-w-6xl mx-auto items-center">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-7xl mx-auto items-stretch px-4">
         {plans.map((plan, index) => {
-          const isStandard = plan.name === "Standard Plan"
+          const isStandard = plan.is_standard
           
           return (
             <motion.div
               key={index}
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className={`p-10 rounded-[3rem] transition-all duration-500 relative flex flex-col z-10 ${
+              className={`p-10 rounded-[3rem] transition-all duration-500 relative flex flex-col border-2 ${
                 isStandard 
-                ? 'bg-primary text-white shadow-2xl scale-110 h-[580px] z-20' 
-                : 'bg-white text-primary border border-slate-100 hover:shadow-xl h-[520px]'
+                ? 'bg-primary text-white border-primary shadow-2xl scale-105 z-10' 
+                : 'bg-white text-primary border-primary hover:shadow-xl'
               }`}
             >
-              <div className="mb-8 text-center">
-                <h3 className={`text-lg font-black uppercase tracking-widest mb-4 ${isStandard ? 'text-secondary' : 'text-primary'}`}>{plan.name}</h3>
-                <p className={`text-[13px] leading-relaxed max-w-[240px] mx-auto ${isStandard ? 'text-white/70' : 'text-muted-foreground'}`}>{plan.description}</p>
+              <h3 className="text-3xl font-bold mb-8">{plan.name}</h3>
+              
+              <div className="space-y-8 flex-grow mb-12">
+                <div>
+                  <h4 className="font-semibold mb-4 text-lg">Features:</h4>
+                  <ul className="space-y-2">
+                    {plan.content.features.map((item, idx) => (
+                      <li key={idx} className="flex items-start gap-3 text-base">
+                        <span className="mt-2 w-1.5 h-1.5 rounded-full bg-current flex-shrink-0" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div>
+                  <h4 className="font-semibold mb-4 text-lg">Usage Limits:</h4>
+                  <ul className="space-y-2">
+                    {plan.content.usageLimits.map((item, idx) => (
+                      <li key={idx} className="flex items-start gap-3 text-base">
+                        <span className="mt-2 w-1.5 h-1.5 rounded-full bg-current flex-shrink-0" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div>
+                  <h4 className="font-semibold mb-4 text-lg">Additional Services:</h4>
+                  <ul className="space-y-2">
+                    {plan.content.additionalServices.map((item, idx) => (
+                      <li key={idx} className="flex items-start gap-3 text-base">
+                        <span className="mt-2 w-1.5 h-1.5 rounded-full bg-current flex-shrink-0" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
               
-              <div className="w-12 h-1 bg-secondary mx-auto mb-10 opacity-30" />
-              
-              <ul className="space-y-4 mb-10 flex-grow">
-                {plan.features.map((feature, idx) => (
-                  <li key={idx} className="flex items-center gap-3 text-[13px] font-medium">
-                    <Check size={14} className={isStandard ? 'text-secondary' : 'text-secondary'} strokeWidth={3} />
-                    <span className={isStandard ? 'text-white/80' : 'text-muted-foreground'}>{feature}</span>
-                  </li>
-                ))}
-              </ul>
-              
               <Button 
-                variant={isStandard ? "secondary" : "outline"} 
-                className={`w-full rounded-2xl h-14 font-bold text-sm transition-transform hover:scale-105 ${
+                variant={isStandard ? "secondary" : "default"} 
+                className={`w-full rounded-full h-14 font-bold text-xl transition-all shadow-lg ${
                   isStandard 
-                  ? 'bg-white text-primary hover:bg-slate-50 border-none' 
-                  : 'border-2 border-primary text-primary hover:bg-primary hover:text-white'
+                  ? 'bg-white text-primary hover:bg-slate-100' 
+                  : 'bg-primary text-white hover:bg-primary/90'
                 }`}
               >
-                Join Now
+                Get Started
               </Button>
             </motion.div>
           )
@@ -105,3 +120,4 @@ export function Pricing() {
     </Section>
   )
 }
+

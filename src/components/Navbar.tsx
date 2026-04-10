@@ -31,16 +31,16 @@ export function Navbar() {
   return (
     <header
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-6 py-4",
-        scrolled ? "bg-white shadow-sm py-3" : "bg-white py-4 shadow-sm"
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-6",
+        scrolled ? "bg-white shadow-sm py-1.5" : "bg-white py-2 shadow-sm"
       )}
     >
-      <div className="max-w-7xl mx-auto flex items-center justify-between">
+      <div className="max-w-[1440px] mx-auto flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2 group transition-transform hover:scale-105">
           <img 
             src="/logo.png" 
             alt="Sparkwell Creative" 
-            className="h-10 md:h-12 w-auto object-contain"
+            className="h-12 md:h-16 w-auto object-contain"
             onError={(e) => {
               // Only shown if logo.png is missing
               e.currentTarget.style.display = 'none';

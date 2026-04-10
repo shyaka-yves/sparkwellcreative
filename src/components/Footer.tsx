@@ -15,7 +15,7 @@ export function Footer() {
             <img 
               src="/logo.png" 
               alt="Sparkwell Creative" 
-              className="h-14 w-auto object-contain"
+              className="h-20 w-auto object-contain"
               onError={(e) => {
                 e.currentTarget.style.display = 'none';
                 e.currentTarget.nextElementSibling?.classList.remove('hidden');

@@ -9,6 +9,7 @@ import { Testimonials } from "@/components/sections/Testimonials";
 import { Contact } from "@/components/sections/Contact";
 import { FAQ } from "@/components/sections/FAQ";
 import { CTAFooter } from "@/components/sections/CTAFooter";
+import { WhatsAppButton } from "@/components/WhatsAppButton";
 
 export default function Home() {
   return (
@@ -24,6 +25,7 @@ export default function Home() {
       <Contact />
       <FAQ />
       <CTAFooter />
+      <WhatsAppButton />
     </div>
   );
 }
