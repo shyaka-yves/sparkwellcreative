@@ -46,11 +46,14 @@ export function Footer() {
 
         {/* Quick Links */}
         <div>
-          <h4 className="text-xs font-black uppercase tracking-widest text-secondary mb-8">Navigation</h4>
+          <h4 className="text-xs font-black uppercase tracking-widest text-secondary mb-8">Quick Links</h4>
           <ul className="space-y-4 text-sm font-bold text-primary/70">
-            <li><Link href="#services" className="hover:text-secondary transition-colors">Digital Solutions</Link></li>
-            <li><Link href="#portfolio" className="hover:text-secondary transition-colors">Successful Partners</Link></li>
-            <li><Link href="#packages" className="hover:text-secondary transition-colors">Our Packages</Link></li>
+            <li><Link href="#" className="hover:text-secondary transition-colors">Home</Link></li>
+            <li><Link href="#about" className="hover:text-secondary transition-colors">About</Link></li>
+            <li><Link href="#services" className="hover:text-secondary transition-colors">Services</Link></li>
+            <li><Link href="#portfolio" className="hover:text-secondary transition-colors">Portfolio</Link></li>
+            <li><Link href="#why-us" className="hover:text-secondary transition-colors">Why Choose Us</Link></li>
+            <li><Link href="#packages" className="hover:text-secondary transition-colors">Packages</Link></li>
           </ul>
         </div>
 

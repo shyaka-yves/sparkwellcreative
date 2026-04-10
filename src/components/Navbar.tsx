@@ -11,9 +11,9 @@ const navLinks = [
   { name: "Home", href: "#" },
   { name: "About", href: "#about" },
   { name: "Services", href: "#services" },
-  { name: "What we offer", href: "#offer" },
+  { name: "Portfolio", href: "#portfolio" },
   { name: "Why Choose Us", href: "#why-us" },
-  { name: "Packages", href: "#pricing" },
+  { name: "Packages", href: "#packages" },
 ]
 
 export function Navbar() {
