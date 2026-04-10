@@ -18,17 +18,27 @@ export default function LoginPage() {
     setLoading(true)
     setError(null)
 
-    const { error: loginError } = await supabase.auth.signInWithPassword({
-      email,
-      password,
-    })
+    try {
+      if (!supabase) {
+        throw new Error("Supabase is not connected. Are the Vercel environment variables set?")
+      }
 
-    if (loginError) {
-      setError(loginError.message)
+      const { error: loginError } = await supabase.auth.signInWithPassword({
+        email,
+        password,
+      })
+
+      if (loginError) {
+        setError(loginError.message)
+      } else {
+        router.push("/admin")
+        router.refresh()
+      }
+    } catch (err: any) {
+      setError(err.message || "An unexpected error occurred")
+    } finally {
+      // If we got an error, stop loading. If successful, it'll transition away.
       setLoading(false)
-    } else {
-      router.push("/admin")
-      router.refresh()
     }
   }
 
