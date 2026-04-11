@@ -4,8 +4,24 @@ import { motion } from "framer-motion"
 import { Section, SectionHeader } from "@/components/ui/Section"
 import { Button } from "@/components/ui/Button"
 import { ArrowUpRight } from "lucide-react"
+import { useState, useEffect } from "react"
+import { supabase } from "@/lib/supabase"
 
 export function About() {
+  const [aboutImage, setAboutImage] = useState("https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop")
+
+  useEffect(() => {
+    async function fetchImage() {
+      const { data } = await supabase
+        .from("site_content")
+        .select("value")
+        .eq("key", "about_image")
+        .single()
+      if (data?.value) setAboutImage(data.value)
+    }
+    fetchImage()
+  }, [])
+
   return (
     <Section id="about" className="bg-slate-50">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -17,7 +33,7 @@ export function About() {
           className="relative aspect-square lg:aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl"
         >
           <img 
-            src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop" 
+            src={aboutImage} 
             alt="Agency Culture" 
             className="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
           />

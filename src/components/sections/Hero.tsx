@@ -3,14 +3,30 @@
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/Button"
 import { ArrowRight, Play } from "lucide-react"
+import { useState, useEffect } from "react"
+import { supabase } from "@/lib/supabase"
 
 export function Hero() {
+  const [bgImage, setBgImage] = useState("https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop")
+
+  useEffect(() => {
+    async function fetchBg() {
+      const { data } = await supabase
+        .from("site_content")
+        .select("value")
+        .eq("key", "hero_bg")
+        .single()
+      if (data?.value) setBgImage(data.value)
+    }
+    fetchBg()
+  }, [])
+
   return (
     <section className="relative min-h-[110vh] flex flex-col justify-center overflow-hidden">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <img 
-          src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop" 
+          src={bgImage} 
           className="w-full h-full object-cover"
           alt="Team collaboration"
         />

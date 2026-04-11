@@ -5,13 +5,12 @@ import Link from "next/link"
 import { usePathname, useRouter } from "next/navigation"
 import { 
   LayoutDashboard, 
-  Briefcase, 
+  Settings, 
+  Image, 
   Users, 
-  Tag, 
   MessageSquare, 
   LogOut,
   ChevronRight,
-  Settings,
   Menu,
   X
 } from "lucide-react"
@@ -21,10 +20,9 @@ import { cn } from "@/lib/utils"
 const menuItems = [
   { name: "Overview", href: "/admin", icon: <LayoutDashboard size={20} /> },
   { name: "Content", href: "/admin/content", icon: <Settings size={20} /> },
-  { name: "Portfolio", href: "/admin/portfolio", icon: <Briefcase size={20} /> },
-  { name: "Team", href: "/admin/team", icon: <Users size={20} /> },
-  { name: "Pricing", href: "/admin/pricing", icon: <Tag size={20} /> },
+  { name: "Site Images", href: "/admin/images", icon: <Image size={20} /> },
   { name: "Contacts", href: "/admin/contacts", icon: <MessageSquare size={20} /> },
+  { name: "Settings", href: "/admin/settings", icon: <Users size={20} /> },
 ]
 
 export function AdminSidebar() {

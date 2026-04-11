@@ -7,6 +7,8 @@ import { motion, AnimatePresence } from "framer-motion"
 import { Menu, X } from "lucide-react"
 import { Button } from "./ui/Button"
 import { cn } from "@/lib/utils"
+import { ThemeToggle } from "./ThemeToggle"
+import { supabase } from "@/lib/supabase"
 
 const navLinks = [
   { name: "Home", href: "#" },
@@ -20,6 +22,7 @@ const navLinks = [
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const [logo, setLogo] = useState("/logo.png")
   const pathname = usePathname()
 
   if (pathname.startsWith('/admin')) {
@@ -30,6 +33,17 @@ export function Navbar() {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20)
     }
+    
+    async function fetchLogo() {
+      const { data } = await supabase
+        .from("site_content")
+        .select("value")
+        .eq("key", "site_logo")
+        .single()
+      if (data?.value) setLogo(data.value)
+    }
+
+    fetchLogo()
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
@@ -38,15 +52,15 @@ export function Navbar() {
     <header
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-6",
-        scrolled ? "bg-white shadow-sm py-1.5" : "bg-white py-2 shadow-sm"
+        scrolled ? "bg-white dark:bg-slate-900 shadow-sm py-1" : "bg-white dark:bg-slate-900 py-1.5 shadow-sm"
       )}
     >
       <div className="max-w-[1440px] mx-auto flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2 group transition-transform hover:scale-105">
           <img 
-            src="/logo.png" 
+            src={logo} 
             alt="Sparkwell Creative" 
-            className="h-16 md:h-20 lg:h-24 w-auto object-contain"
+            className="h-10 md:h-12 lg:h-14 w-auto object-contain dark:invert"
             onError={(e) => {
               // Only shown if logo.png is missing
               e.currentTarget.style.display = 'none';
@@ -54,7 +68,7 @@ export function Navbar() {
             }}
           />
           <div className="hidden">
-            <span className="text-xl font-black tracking-tighter text-primary">
+            <span className="text-xl font-black tracking-tighter text-primary dark:text-white">
               SPARKWELL <span className="text-secondary">CREATIVE</span>
             </span>
           </div>
@@ -73,7 +87,8 @@ export function Navbar() {
           ))}
         </nav>
 
-        <div className="hidden lg:block">
+        <div className="hidden lg:flex items-center gap-4">
+          <ThemeToggle />
           <Button 
             variant="default" 
             onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
