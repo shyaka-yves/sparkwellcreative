@@ -7,7 +7,6 @@ import { motion, AnimatePresence } from "framer-motion"
 import { Menu, X } from "lucide-react"
 import { Button } from "./ui/Button"
 import { cn } from "@/lib/utils"
-import { ThemeToggle } from "./ThemeToggle"
 import { supabase } from "@/lib/supabase"
 
 const navLinks = [
@@ -52,7 +51,7 @@ export function Navbar() {
     <header
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-6",
-        scrolled ? "bg-white dark:bg-slate-900 shadow-sm py-1" : "bg-white dark:bg-slate-900 py-1.5 shadow-sm"
+        scrolled ? "bg-white shadow-sm py-1" : "bg-white py-1.5 shadow-sm"
       )}
     >
       <div className="max-w-[1440px] mx-auto flex items-center justify-between">
@@ -60,7 +59,7 @@ export function Navbar() {
           <img 
             src={logo} 
             alt="Sparkwell Creative" 
-            className="h-10 md:h-12 lg:h-14 w-auto object-contain dark:invert"
+            className="h-10 md:h-12 lg:h-14 w-auto object-contain"
             onError={(e) => {
               // Only shown if logo.png is missing
               e.currentTarget.style.display = 'none';
@@ -68,7 +67,7 @@ export function Navbar() {
             }}
           />
           <div className="hidden">
-            <span className="text-xl font-black tracking-tighter text-primary dark:text-white">
+            <span className="text-xl font-black tracking-tighter text-primary">
               SPARKWELL <span className="text-secondary">CREATIVE</span>
             </span>
           </div>
@@ -88,7 +87,6 @@ export function Navbar() {
         </nav>
 
         <div className="hidden lg:flex items-center gap-4">
-          <ThemeToggle />
           <Button 
             variant="default" 
             onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}

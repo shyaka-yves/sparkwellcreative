@@ -11,17 +11,6 @@
   --border: #e2e8f0;
 }
 
-.dark {
-  --background: #020617;
-  --foreground: #ffffff;
-  --primary: #0ea5e9;
-  --secondary: #38bdf8;
-  --muted: #0f172a;
-  --muted-foreground: #94a3b8;
-  --accent: #1e293b;
-  --border: #334155;
-}
-
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
