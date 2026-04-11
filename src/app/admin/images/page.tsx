@@ -40,7 +40,7 @@ export default function ImagesAdmin() {
 
     const dbImages = data || []
     const combined = INITIAL_IMAGES.map(initial => {
-      const found = dbImages.find(db => db.key === initial.key)
+      const found = dbImages.find((db: any) => db.key === initial.key)
       return {
         id: found?.id || initial.key,
         key: initial.key,
